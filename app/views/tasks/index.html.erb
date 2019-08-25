@@ -1,5 +1,13 @@
 <div class="container">
   <h2>Tasks</h2>
 
+  <%= form_for :tasks, method: :get, html: {class: "form-inline"} do |f| %>
+    <div class="form-group">
+      <%= f.label "Display every" %>
+      <%= f.number_field :tasks_number, value: @tasks_form.tasks_number, class: "form-control" %>
+      <%= f.label "tasks" %>
+    </div>
+  <% end %><br>
+
   <%= render partial: "group_task", collection: @group_tasks %>
 </div>
